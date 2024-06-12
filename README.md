@@ -27,3 +27,9 @@ Learn more about Angular and TypeScript following Angular for Beginners Course o
 ```
    ng new name_project
 ```
+
+- Create a new component:
+
+```
+   ng g c name_component
+```

@@ -1,0 +1,33 @@
+<h2>Welcome to {{hotelName}}</h2>
+<div>
+    <img [src]="imageUrl" [alt]="imageAlt" [hidden]="isHidden">
+    <button [disabled]="isDisabled" (click)="onClick()">{{ isHidden ? 'Show' : 'Hidden' }}</button>
+</div>
+
+<!-- {{rooms.availableRooms ?? "No rooms"}} -->
+
+<div [ngStyle]="{'color': rooms.availableRooms > 2  ? 'green' : 'red'}"
+    *ngIf="rooms.availableRooms != undefined && rooms.availableRooms > 0">
+    Room List: {{rooms.availableRooms}}
+    <table [ngStyle]="{'color':'black'}">
+        <tr>
+            <th>STT</th>
+            <th>Occupancy</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Amentities</th>
+            <th>Checkin</th>
+            <th>Checkout</th>
+        </tr>
+        <tr [ngClass]="(i+1) % 2 ? 'odd' : 'even'" *ngFor="let room of roomList | slice: 0 : 3;let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{room.occupancy}}</td>
+            <td>{{room.type | uppercase}}</td>
+            <td>{{room.price | currency}}</td>
+            <td>{{room.amenities | titlecase}}</td>
+            <td>{{room.checkinTime | date: 'M/d/yy, h:mm a'}}</td>
+            <td>{{room.checkoutTime | date: 'M/d/yy, h:mm a'}}</td>
+        </tr>
+    </table>
+
+</div>

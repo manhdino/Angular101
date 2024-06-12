@@ -1,0 +1,13 @@
+Binding data to HTML:
+  + Displaying values with interpolation:  <h3>Current customer: {{ currentCustomer }}</h3>
+  + Property Binding: thiết lập các thuộc tính của các phần tử HTML - đồng bộ hóa giá trị từ component class tới các thuộc tính của phần tử HTML trong template
+  + Event Binding trong Angular cho phép bạn lắng nghe và xử lý các sự kiện DOM như click, hover,...
+
+Directives:
+ + use to change the behavior and appearance of the DOM element
+ + can implement all lifecycle hooks 
+ + can not have templates different with components
+   + Structure Directives: *ngIf, *ngFor, và *ngSwitch 
+   + Attribute Directives:(using most) ngClass, ngStyle
+ + Pipes: transform and format data 
+
